@@ -1,0 +1,252 @@
+\documentclass[aspectraio=169,8pt,slidestop,xcolor=table]{beamer}
+\usetheme{Berlin}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[brazil]{varioref}
+\usepackage[english,brazil]{babel}
+\usepackage{graphicx}
+%\usepackage{media9} %Pacote para a inclusão de vídeos
+
+\usepackage{ragged2e}
+\justifying
+
+%\usepackage[T1]{fontenc}
+
+%\usepackage{pgf}
+%\usepackage{indentfirst}
+%\setlength{\parindent}{1.5cm}
+% Controle do espaçamento entre um parágrafo e outro:
+\setlength{\parskip}{0.2cm}  % tente também
+
+%gráfico de pizza
+\usepackage{pgf-pie}
+\usetikzlibrary{shadows}
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+
+
+\setlength\belowcaptionskip{-5pt}
+
+\usepackage{multirow}
+\usepackage{graphicx}
+
+%gráficos usando pgfplots
+\usepackage{pgfplots}
+
+%tabela automatica pra arquivo csv
+\usepackage{pgfplots, pgfplotstable}
+\pgfplotstableread[header=false, col sep=comma]{ % Read data table. 
+% First row doesn't have column names, hence the "header=false"
+2469, Solar
+2443, Fóssil
+1339, Hídrica
+605, Eólica
+566, Biomassa
+2, Nuclear
+}\compilationtimes
+
+
+%comando para fonte de imagens (sites)
+\newcommand{\fonte}[1]{{\resizebox{!}{5pt}{Fonte: #1}}}
+
+%numeração de slide (from internet)
+\expandafter\def\expandafter\insertshorttitle\expandafter{%
+	\insertshorttitle\hfill%
+	\insertframenumber\,/\,\inserttotalframenumber}
+%fim numeração de slide
+
+\usepackage[alf, abnt-etal-cite=2]{abntex2cite}
+\usepackage{subcaption}
+
+\hypersetup{pdfpagemode=FullScreen}
+\setbeamertemplate{caption}[numbered]
+
+\author[Daniel Simião Nunes Oliveira]{\Large{Daniel Simião Nunes Oliveira}\\ \small{Orientador: Dr. Eduard Montgomery Meira Costa}}
+
+\title[Análise da Geração de Energia Elétrica com Biogás no Aterro Sanitário de Petrolina - PE]{Análise da Geração de Energia Elétrica com Biogás no Aterro Sanitário de Petrolina - PE}
+
+
+%\setbeamercovered{transparent} 
+\setbeamertemplate{navigation symbols}{} 
+%\logo{} 
+\institute[UNIVASF]{\large{Colegiado de Engenharia Elétrica}}
+\date{\today}
+%\subject{} 
+
+\begin{document}
+	%-----------------------------------------------------------------
+	\begin{frame}
+	\center{\includegraphics[width=5cm]{../figuras/logo.pdf}}
+	\titlepage
+\end{frame}
+%-----------------------------------------------------------------
+\begin{frame}{Estrutura da Apresentação}
+\tableofcontents
+\end{frame}
+
+%\AtBeginSection[]{
+%\begin{frame}
+%\frametitle{Sumário}
+%\tableofcontents[currentsection]
+%\end{frame}
+%}
+
+\section{Introdução}
+%-----------------------------------------------------------------
+\begin{frame}{Motivação}
+
+\begin{itemize}
+	\item Estudar uma nova metodologia para reaproveitamento do lixo;
+	\item Desenvolver conhecimentos à cerca dos biocombustíveis;
+	\item Aprimorar o perfil profissional ao contexto das energias renováveis;
+	\item Aproveitar a expansão e restruturação do setor de gás natural no Brasil.
+\end{itemize}
+
+
+\end{frame}
+	
+%-----------------------------------------------------------------
+
+\begin{frame}{Objetivo}
+Identificar os principais fatores que favorecem a construção de uma usina termoelétrica, localizada no aterro sanitário de Petrolina (PE), aproveitando o biogás gerado pelo lixo em decomposição.
+
+\vspace{0.5cm}
+Objetivos específicos:
+\begin{itemize}
+    \item Analisar o tempo de vida útil do aterro sanitário;
+    \item Quantificar a geração de energia elétrica no aterro sanitário;
+    \item Analisar o consumo municipal de energia elétrica em 2018;
+    \item Avaliar o tempo de retorno do investimento;
+    \item Estimar o retorno financeiro com créditos de carbono.
+\end{itemize}
+\end{frame}
+
+%-----------------------------------------------------------------
+
+%----------------------------------------------------------------
+%Revisão Bibliográfica
+\AtBeginSection[]{
+	\begin{frame}
+	\frametitle{Sumário}
+	\tableofcontents[currentsection]
+\end{frame}
+}
+%-----------------------------------------------------------------
+
+
+%-----------------------------------------------------------------
+\begin{frame}{Sistema Elétrico Brasileiro}
+Segundo \citeonline{tolmasquim2000origens}, ''entre 1990 e 2000, o consumo cresceu 49\% enquanto que a capacidade instalada foi expandida em 35\%''. Porém, a geração para o mesmo período não superou 50\% da capacidade disponível, muito menos do consumo.
+
+
+
+\end{frame}
+
+\begin{frame}{Recursos Renováveis}
+No dia 1 de Agosto deste ano, a humanidade consumiu todos os recursos renováveis fornecidos pela terra para um período de um ano em apenas 7 meses \cite{exame}.
+
+\begin{figure}[!h]
+    \centering
+    \caption{Planeta terra no ''cheque especial''}
+    %\includegraphics[width=11cm]{../figuras/earthred3.png}
+\end{figure}
+
+A humanidade está drenando as energias do planeta muito mais rápido do que sua capacidade de reposição natural.
+
+\end{frame}
+
+\begin{frame}{Recursos Renováveis}
+Para \citeonline[pág. 467]{weil}, uma fonte renovável é reabastecida por processos naturais e pode ser utilizada várias vezes, limitadamente ao seu ciclo de reposição.
+
+\begin{figure}[!h]
+    \centering
+    \caption{Recursos renováveis: sol, vento, biomassa e água}
+    %\includegraphics[width=4cm]{../figuras/renovaveis.eps}\\
+    \label{renovaveis}
+    \fonte{O autor}
+\end{figure}
+
+É uma ideia de que a reposição natural deve ser compatível com a escala duração de uma vida humana.
+
+\end{frame}
+
+\begin{frame}{Matriz Energética Nacional}
+A maior parte da geração advém das usinas hidrelétricas e termoelétricas, representando cerca de 60,8\% da matriz elétrica \cite{big:aneel}.
+
+\end{frame}
+
+\begin{frame}{Matriz Energética Nacional}
+Menos do que 1\% da produção de energia no brasil aproveita os gases gerados pelos aterros sanitários como combustível \cite{big:aneel}.
+
+\begin{figure}[ht]
+    \centering
+    \caption{Potencial energético do lixo urbano no Brasil e usinas em operação (133 MW)}
+    %\includegraphics[width=0.55\textwidth]{../figuras/Mapabiogas.pdf}\\
+    \fonte{O autor}
+\end{figure}
+
+
+\end{frame}
+
+
+\begin{frame}{Políticas Públicas}
+Em 26 de dezembro de 2017 a Presidência da República aprovou a lei de nº 13.576 que dispõe sobre a Política Nacional de Biocombustíveis (RenovaBio):
+
+\begin{itemize}
+	\item Reconhecimento da importância dos biocombustíveis na matriz energética;
+	\item Incremento da segurança energética;
+	\item Redução dos gases causadores do efeito estufa;
+	\item Garantia de acesso prioritário a financiamentos no BNDES.
+\end{itemize}
+
+\end{frame}
+
+
+\section{Conclusão}
+%-----------------------------------------------------------------
+%Referências
+\AtBeginSection[]{
+	\begin{frame}
+	\frametitle{Sumário}
+	\tableofcontents[currentsection]
+\end{frame}
+}
+%-----------------------------------------------------------------
+\begin{frame}{Conclusão}
+\begin{itemize}
+	\item Promover o alívio do orçamento municipal e o surgimento de novas empresas;
+	\item O dinheiro economizado pode ser transferido para educação, saúde, transporte coletivo ou até mesmo ser reinvestido na iluminação pública;
+	\item Conexo com as exigências dos mercados consumidores, preservando o meio ambiente
+\end{itemize}
+
+\end{frame}
+
+
+
+
+\begin{frame}{FIM}
+\vspace{3cm}
+\begin{center}
+\resizebox{!}{1cm}{Obrigado!}
+\end{center}
+
+\end{frame}
+
+
+\section{Referências}
+
+% --- O comando \allowframebreaks ---
+% Se o conteúdo não se encaixa em um quadro, a opção allowframebreaks instrui 
+% beamer para quebrá-lo automaticamente entre dois ou mais quadros,
+% mantendo o frametitle do primeiro quadro (dado como argumento) e acrescentando 
+% um número romano ou algo parecido na continuação.
+
+\begin{frame}[allowframebreaks]{Referências}
+	\bibliographystyle{abntex2-alf}
+	\bibliography{../referencias}
+\end{frame}
+
+
+\end{document}

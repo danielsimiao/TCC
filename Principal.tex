@@ -1,0 +1,252 @@
+\documentclass[
+	12pt,
+	openright,
+	twoside,
+	a4paper,
+	oneside,
+	brazil,
+	chapter=TITLE,
+	%section=TITLE,
+	%subsection=TITLE,
+	sumario = tradicional
+]{abntex2}
+
+\usepackage[font=small,format=plain,labelfont=bf,up,margin=1cm]{caption}
+\usepackage{amsmath}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[pdftex]{graphicx}
+\usepackage{subfig}
+\usepackage{float}
+\usepackage[alf,abnt-etal-list=0, abnt-etal-cite=2, abnt-etal-text=it, abnt-repeated-author-omit=yes, abnt-emphasize=bf]{abntex2cite}
+% alf - exibi as referencias em ordem alfabetica.
+% abnt-etal-list=0 - foi utilizado para não permitir o uso de et al. nas referências.
+% abnt-etal-cite=2 - mostra que pode ser feita a citação de até 2 autores no texto. Se numa referência existem 3 autores, usa-se evidentemente o et al., com a citação do primeiro autor.
+% abnt-etal-text=it - exibi a escrita do et al nas referencias em italico.
+\usepackage{svg}
+\usepackage{indentfirst} % justificar automaticamente os parágrafos
+\usepackage{lscape}
+\usepackage{import}
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{lastpage}			% Usado pela Ficha catalográfica
+\usepackage{color}				% Controle das cores
+\usepackage{microtype} 			% para melhorias de justificação
+
+%unidades de medida em equações
+\usepackage{siunitx}
+\sisetup{detect-all}
+%%%%%%%%%%%%%%%%%%%%%%
+
+% Acrescentado para gerar as tabelas 22/07/2017
+\usepackage[normalem]{ulem}
+\useunder{\uline}{\ul}{}
+
+\usepackage{longtable}
+\usepackage{empheq}
+\usepackage{multirow}
+\usepackage{booktabs}
+\usepackage{pdfpages} %adicionar pdfs
+
+
+\newcommand*\widefbox[1]{\fbox{\hspace{2em}#1\hspace{2em}}}
+\newcommand{\head}[1]{\textnormal{\textbf{#1}}}
+\newcolumntype{C}[2]{>{\centering\vspace{#2}\let\newline\\\arraybackslash\hspace{0pt}\vspace{#2}}m{#1}}
+
+% Préambulo --------------------------------------------------------------------------------------------------------------------------
+
+\newcommand{\universidade}{Universidade Federal do Vale do São Francisco }
+\newcommand{\curso}{Engenharia Elétrica}
+\newcommand{\graduacao}{Curso de Graduação em \curso}
+\newcommand{\bancaum}{Prof. Dr. Rodrigo Pereira Ramos (CENEL)}
+\newcommand{\bancadois}{Prof. Dr. José Bismark de Medeiros (CEMEC)}
+\newcommand{\bibliotecario}{Inserir Bibliotecário}
+\newcommand{\cpf}{052.376.974-19}
+
+\autor{Daniel Simião Nunes Oliveira}
+
+% altera o tamanho da assinatura
+\setlength{\ABNTEXsignwidth}{9cm}
+
+%\titulo{Geração de Energia Elétrica com Biogás de Aterro Sanitário: Um Mecanismo de Desenvolvimento Limpo para Petrolina - PE}
+\titulo{Análise da Geração de Energia Elétrica com Biogás no Aterro Sanitário de Petrolina - PE}
+\tipotrabalho{Trabalho de Conclusão de Curso}
+\orientador[Orientador:]{Prof. Dr. Eduard Montgomery Meira Costa}
+%\coorientador[Coorientador: Dr.]{Brauliro Gonçalves Leal}
+\instituicao{\universidade \par \curso}
+\local{Juazeiro - BA}
+\data{2019}
+\preambulo{
+	Trabalho de Conclusão de Curso apresentado como requisito parcial para obtenção do título de Bacharel em \curso, pela \universidade - UNIVASF.
+}
+
+% alterando o aspecto da cor azul.
+\definecolor{blue}{RGB}{41,5,195}
+
+% Configurações de aparência do PDF final.
+\makeatletter
+
+%%%%%%%%% unidades de medida equações
+\providecommand\add@text{}
+\newcommand\tagaddtext[1]{%
+  \gdef\add@text{#1\gdef\add@text{}}}% 
+\renewcommand\tagform@[1]{%
+  \maketag@@@{\llap{\add@text\quad}(\ignorespaces#1\unskip\@@italiccorr)}%
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\long\def\ifnodedefined#1#2#3{%
+    \@ifundefined{pgf@sh@ns@#1}{#3}{#2}%
+}
+\hypersetup {
+    breaklinks      = true,
+	pdftitle		= {\@title},
+	pdfauthor		= {\@author},
+	pdfsubject      = {\imprimirpreambulo},
+	pdfcreator		= {LaTeX com abnTeX2},
+	pdfkeywords 	= {Geração Distribuída}{Biogás}{Biometano}{Aterro Sanitário},
+	colorlinks		= true,			% false: boxed links; true: colored links
+	linkcolor		= black,         % cor links internos.
+	citecolor		= black,       	% cor links referencias bibliograficas.
+	filecolor		= magenta,		% cor links de arquivos.
+	urlcolor		= black,			% Cor url.
+	bookmarksdepth	= 4
+}
+
+%escrever subescrito
+\usepackage{fixltx2e}
+
+%%%%%%%%%%%%%%
+\makeatother
+
+% compila o sumário
+\makeindex  
+
+
+
+% Altera as margens padrões
+\pagenumbering{arabic}
+
+%pacotes para desenhos e gráficos
+\usepackage{tikz}
+\usepackage{pgfplots}
+
+% Espaçamentos  entre linhas e parágrafos 
+% O tamanho do parágrafo é dado por:
+\setlength{\parindent}{1.5cm}
+% Controle do espaçamento entre um parágrafo e outro:
+\setlength{\parskip}{0.2cm}  % tente também \onelineskip
+
+
+
+% Retira espaço extra obsoleto entre as frases.
+\frenchspacing
+
+
+\usepackage{leftidx}
+
+\begin{document}
+
+	\include{elementos-pretextuais/capa}
+	\include{elementos-pretextuais/folhaderosto}
+	\include{elementos-pretextuais/dedicatoria}
+	\include{elementos-pretextuais/agradecimentos}
+	\include{elementos-pretextuais/epigrafe}
+	\include{elementos-pretextuais/resumo}
+	\include{elementos-pretextuais/abreviaturas}
+
+
+	\selectlanguage{brazil}
+
+	% ELEMENTOS PRE-TEXTUAIS
+
+	\pretextual
+
+	% Capa
+	\imprimircapa
+	
+	% Folha de Rosto
+	\folhaderostocontent
+	
+	% Ficha Catalográfica	
+	%\input{elementos-pretextuais/fichacatalografica.tex}
+	\includepdf[pages=-]{Digitalizado/ficha.pdf}
+	%Parecer da Banca
+    \input{elementos-pretextuais/parecer.tex}
+	%Declaração de Conformidade
+    \input{elementos-pretextuais/conformidade.tex}
+
+	% Folha de Aprovação
+	%\input{elementos-pretextuais/folhadeaprovacao.tex}
+
+    
+	% Dedicatoria
+	\imprimirdedicatoria
+	
+	% Incluindo os agradecimentos
+	\imprimiragradecimentos
+	
+	% Epigrafe
+	\imprimirepigrafe
+	
+	% Resumo e Abstract
+	\imprimirresumo
+
+	% Lista de Abreviaturas
+	\imprimirabreviaturas
+	
+	% Lista de Figuras
+	
+	\renewcommand*\listfigurename{Lista de Figuras}
+	\listoffigures*
+	\cleardoublepage	
+	
+	% Lista de Tabelas
+	\renewcommand*\listtablename{Lista de Tabelas}
+	\listoftables*
+	\cleardoublepage
+
+
+	% Índice (Sumário)
+	\tableofcontents*
+	\cleardoublepage
+	
+	%%%%%%%%%%%%%%%%%%% ELEMENTOS TEXTUAIS %%%%%%%%%%%%%%%%
+	\chapterstyle{BlackBox}
+	\textual
+	%\pagestyle{simple}
+	
+	% Inserir meus capítulos aqui
+	
+	%introdução
+	\include{elementos-textuais/Cap1}
+	
+	%fundamentação teórica
+	\include{elementos-textuais/Cap2}
+	
+	%metodologia
+	\include{elementos-textuais/Cap3}
+	
+	%resultados e discussões
+	\include{elementos-textuais/Cap4}
+	
+	%conclusão
+	\include{elementos-textuais/Cap5}
+	
+
+
+
+	%%%%%%%%%%% ELEMENTOS POS-TEXTUAIS %%%%%%%%%%%
+	\postextual
+
+	\chapterstyle{abnt}
+
+	\bibliographystyle{abntex2-alf}
+	\bibliography{referencias}
+
+%para inserir ou remover apendices e anexos, basta adicionar ou remover o percentual (comentário %) 	
+ 	%\input{apendices.tex}
+	%\input{anexos.tex}
+	
+
+\end{document}

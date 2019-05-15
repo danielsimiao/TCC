@@ -1,0 +1,38 @@
+\makeatletter
+\renewcommand{\folhaderostocontent} {
+	\begin{center}
+		\ABNTEXchapterfont {\large \textbf {\MakeUppercase{\universidade}\\ \MakeUppercase{\graduacao} }}
+		\vspace*
+		\fill
+
+		{\ABNTEXchapterfont\MakeUppercase{\Large\imprimirautor}}
+
+		\vspace*{\fill}
+
+		\begin{center}
+			{\ABNTEXchapterfont\bfseries\LARGE\imprimirtitulo}
+		\end{center}
+
+		\vspace*{\fill}\vspace*{\fill}
+
+		\abntex@ifnotempty{\imprimirpreambulo} {
+			\hspace{.45\textwidth}
+			\begin{minipage}{.5\textwidth}
+				\SingleSpacing
+				\imprimirpreambulo \\\\
+				\imprimirorientadorRotulo~\imprimirorientador\\
+				\imprimircoorientadorRotulo~\imprimircoorientador
+			\end{minipage}
+			\vspace*{\fill}
+		}
+
+		\vspace*{\fill}\vspace*{\fill}
+
+		{\large\imprimirlocal}
+		\par
+		{\large\imprimirdata}
+	\end{center}
+
+	\newpage
+}
+\makeatother
